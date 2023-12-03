@@ -36,5 +36,6 @@ def game_powers(game : list[dict[str, int]]) -> list[int]:
 	return (powers)
 
 games = parse_input(input_lines)
-print(sum(possible_games(games, 12, 13, 14)))
-print(sum(game_powers(games)))
+
+print("part1:", sum(possible_games(games, 12, 13, 14)))
+print("part2:", sum(game_powers(games)))

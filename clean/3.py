@@ -54,5 +54,5 @@ def get_gear_ratios(lines : list[str]) -> list[int]:
 					gear_ratios.append(numbers[0] * numbers[1])
 	return gear_ratios
 
-print(sum(get_numbers_adjacent_to_a_symbol(input_lines)))
-print(sum(get_gear_ratios(input_lines)))
+print("part1:", sum(get_numbers_adjacent_to_a_symbol(input_lines)))
+print("part2:", sum(get_gear_ratios(input_lines)))

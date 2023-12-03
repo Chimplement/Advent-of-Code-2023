@@ -14,25 +14,34 @@ spelled_digits : [str] = [
 	"nine"
 ]
 
-def get_first_digit(line : str) -> int:
+def get_first_digit(line : str, part2 : bool) -> int:
 	for i in range(len(line)):
 		if line[i].isdigit():
 			return int(line[i])
-		for j in range(1, len(spelled_digits)):
-			if line.startswith(spelled_digits[j], i):
-				return int(j)
+		if part2:
+			for j in range(1, len(spelled_digits)):
+				if line.startswith(spelled_digits[j], i):
+					return int(j)
 	return 0
 
-def get_last_digit(line : str) -> int:
+def get_last_digit(line : str, part2 : bool = True) -> int:
 	for i in range(len(line) - 1, -1, -1):
 		if line[i].isdigit():
 			return int(line[i])
-		for j in range(1, len(spelled_digits)):
-			if line.endswith(spelled_digits[j], 0, i + 1):
-				return int(j)
+		if part2:
+			for j in range(1, len(spelled_digits)):
+				if line.endswith(spelled_digits[j], 0, i + 1):
+					return int(j)
 	return 0
 
 sum = 0
 for line in input_lines:
+	sum += get_first_digit(line, False) * 10 + get_last_digit(line, False)
+
+print("part1:", sum)
+
+sum = 0
+for line in input_lines:
 	sum += get_first_digit(line) * 10 + get_last_digit(line)
-print(sum)
+
+print("part2:", sum)
