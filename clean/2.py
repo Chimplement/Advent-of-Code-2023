@@ -4,6 +4,7 @@ with open("input.txt", "r") as input_file:
 def parse_input(input_lines : list[str]) -> list[dict[str, int]]:
 	parsed_input = []
 	for i, line in enumerate(input_lines):
+		line = line.removesuffix('\n')
 		parsed_line = {}
 		parsed_line["ID"] = i + 1
 		subsets = line.split(": ")[1].split("; ")
@@ -14,7 +15,6 @@ def parse_input(input_lines : list[str]) -> list[dict[str, int]]:
 			for cubes_of_color in subset.split(", "):
 				cubes = cubes_of_color.split(" ")[0]
 				color = cubes_of_color.split(" ")[1]
-				color = color.removesuffix('\n');
 				if (color in ["red", "green", "blue"]):
 					parsed_line[color] = max(parsed_line[color], int(cubes))
 		parsed_input.append(parsed_line)
