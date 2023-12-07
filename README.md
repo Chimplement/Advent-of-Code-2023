@@ -6,6 +6,7 @@ Or, you can view the code after I did a bit of clean up [here](clean/).
 #### My Times:
 | day | silver |  gold  |
 |:---:|:------:|:------:|
+|  7  |00:29:15|00:42:57|
 |  6  |00:11:09|00:12:37|
 |  5  |00:32:31|01:39:46|
 |  4  |00:13:31|00:36:01|
