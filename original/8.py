@@ -1,11 +1,8 @@
-from functools import lru_cache
-
 with open("input.txt", "r") as input_file:
 	input_lines : list[str] = input_file.readlines()
 
 map = input_lines[2:]
 
-@lru_cache(maxsize=None)
 def find_node(node : str) -> str:
 	for map_node in map:
 		if map_node[:3].endswith(node):
