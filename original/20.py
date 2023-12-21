@@ -74,7 +74,6 @@ type_map = {'%': FlipFlop, '&': Conjunction}
 for line in input_lines:
 	module, destinations = line.split(" -> ")
 	destinations = destinations.split(", ")
-	module_type : Module
 	if module == "broadcaster":
 		module_name = module
 		module_type = Broadcaster
